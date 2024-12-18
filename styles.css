@@ -138,20 +138,18 @@ div.scrollmenu {
   } 
 
   div.scrollmenu a {      
-    color: black;
+    color: #39b913;
     padding: 5px;
     border-radius: 5px; 
-    border: 1px solid gray;
+    border: 1px solid #39b913;
     margin: 10px 5px;
   }
 
-  div.scrollmenu a.act {
-    background-color: #dfdcdc;
+  div.scrollmenu a.act,
+  div.scrollmenu a:hover {
+    background-color: #39b913;
+    color: white;
   }
-
-  div.scrollmenu a:hover { 
-    background-color: #dfdcdc; 
-  } 
 
 
 
