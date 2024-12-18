@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Info</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- <div class="text-center mt-3 mb-3">
+  <p style="color: #555;">
+    ট্রেন <span class="redText">ঢাকা</span> থেকে <span class="redText">নারায়াণগঞ্জ</span> যাচ্ছেঃ <br>
+    <span class="redText">পাগলা</span> থেকে ছেড়েছে <span class="redText">7.25 PM</span> এ, পরবর্তী স্টেশন <span class="redText">ফতুল্লা</span>
+  </p>
+  <a href="#" class="btn btn-outline-primary">শিডিউল দেখুন</a>
+</div>
+   -->
+  
+
+    <!-- Navbar -->
+    <nav class="navbar bg-light sticky-top shadow-sm">
+        <!-- Left Section (Logo and Menu) -->
+        <div class="left-section">
+            <button class="bntStyle me-2" data-bs-toggle="modal" data-bs-target="#countryModal">
+                <img src="img/logo.png" alt="" class="profile">
+            </button>
+
+            <!-- Menu (left dropdown) -->
+            <div class="dropdown">
+                <button class="bntStyle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-home"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item active" href="index.html"><i class="fas fa-home me-2"></i>Home</a></li>
+                    <li><a class="dropdown-item" href="phonebook.html"><i class="fas fa-address-book me-2"></i>Phonebook</a></li>
+                    <li><a class="dropdown-item" href="newsfeed.html"><i class="fas fa-newspaper me-2"></i>Newsfeed</a></li>
+                    <li><a class="dropdown-item" href="marketplace.html"><i class="fas fa-store me-2"></i>Marketplace</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Search Bar (Center Section) -->
+        <div class="search-bar">
+          <div class="input-group">
+              <input 
+                  type="text" 
+                  class="form-control search-input" 
+                  placeholder="Search" 
+                  aria-label="Search">
+              <button class="btn btn-outline-success" type="button">
+                  <i class="fas fa-search"></i>
+              </button>
+          </div>
+      </div>
+
+        <!-- Right Section (Notification and User Profile) -->
+        <div class="right-section">
+            <!-- Notification Button (left side of the user profile) -->
+            <div class="dropdown me-2">
+                <button class="bntStyle" type="button" id="notificationMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-plus"></i>
+                </button>
+                
+
+
+                          <!-- Dropdown Menu -->
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationMenuButton">
+            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#createProfileModal">Create Profile</a></li>
+            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#createPostModal">Create Post</a></li>
+            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addProductServiceModal">Add Product/Service</a></li>
+          </ul>
+
+
+
+            </div>
+
+            <!-- User Profile -->
+<button class="bntStyle" data-bs-toggle="modal" data-bs-target="#loginSignupModalUnique">
+  <img src="img/user.png" alt="" class="profile">
+</button>
+
+
+        </div>
+    </nav>
+
+
+
+
+
+
+
+    <section class="mt-4">
+
+      <div class="container">
+          <div id="adSlider" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url(img/ads4.jpg); border: 1px solid #555; border-top-left-radius: 7px; border-top-right-radius: 7px;">
+                  <div class="text-center mt-2 mb-2">
+                    <p style="color: #555;">
+                      ট্রেন <span class="redText">ঢাকা</span> থেকে <span class="redText">নারায়াণগঞ্জ</span> যাচ্ছেঃ <br>
+                      <span class="redText">পাগলা</span> থেকে ছেড়েছে <span class="redText">7.25 PM</span> এ, পরবর্তী স্টেশন <span class="redText">ফতুল্লা</span>
+                    </p>
+                    <a href="#" class="btn btn-primary">শিডিউল দেখুন</a>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="img/ads2.png" class="d-block w-100" alt="Ad 2">
+              </div>
+              <div class="carousel-item">
+                  <img src="img/ads3.png" class="d-block w-100" alt="Ad 3">
+              </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#adSlider" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#adSlider" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+              </button>
+          </div>
+      
+          <!-- Dropdown Fields in a Single Row -->
+          <div class="d-flex justify-content-between catagoryFilter">
+              <div class="mb-2 mt-2 flex-fill mx-2">
+                  <select class="form-select" id="category">
+                      <option selected>Select Category</option>
+                      <option value="1">Technology</option>
+                      <option value="2">Health</option>
+                      <option value="3">Business</option>
+                      <option value="4">Entertainment</option>
+                  </select>
+              </div>
+      
+              <div class="mb-2 mt-2 flex-fill mx-2" id="subcategory-container" style="display:none;">
+                  <select class="form-select" id="subcategory">
+                      <option selected>Select Sub Category</option>
+                  </select>
+              </div>
+      
+              <div class="mb-2 mt-2 flex-fill mx-2" id="topics-container" style="display:none;">
+                  <select class="form-select" id="topics">
+                      <option selected>Select Topic</option>
+                  </select>
+              </div>
+          </div>
+      </div>
+          
+    
+    </section>
+    
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+<!-- Profile Section -->
+<section>
+    <div class="container mt-4">
+      <!-- Card Container -->
+      <div class="card shadow-sm border-light rounded-3">
+        <div class="d-flex align-items-center p-1" data-bs-toggle="collapse" data-bs-target="#profileDetails">
+          <!-- First div: User Image -->
+          <div class="">
+            <img src="img/profile.jpg" class="" alt="User Image" style="width: 100px; height: 100px; object-fit: cover;">
+          </div>
+          
+          <!-- Second div: User Info (Text) -->
+          <div class="p-2 flex-grow-1">
+            <h5 class="card-title mb-1">
+              <a href="#" class="text-dark text-decoration-none font-weight-bold">Ashraful Islam</a>
+            </h5>
+            <div class="d-flex">
+              <small class="card-text me-3 text-muted"><i class="fas fa-list"></i> Laravel Programmer</small>
+              <small class="card-text text-muted"><i class="fas fa-map-marker-alt"></i> 3/1/A, Main Street, City, Country</small>
+            </div>
+          </div>
+          
+          <!-- Third div: Call Button -->
+          <div class="p-2 text-center">
+            <button class="bntStyle" id="callBtn" aria-label="Call Ashraful">
+              <i class="fas fa-phone-alt" style="transform: rotate(90deg);"></i>
+              <span class="count" id="callCount">0</span>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Collapsible Section -->
+        <div id="profileDetails" class="collapse">
+          <div class="card-body">
+            <h5>Additional Information</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+            <p>More details about Ashraful, his projects, or personal interests.</p>
+
+            <div class="text-center">
+              <button class="btn btn-outline-success">Edit/Call</button>
+              <button class="btn btn-outline-danger">Delete/Report</button>
+              <button class="btn btn-outline-primary">Share</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  
+  
+  <!-- Post Section -->
+  <section>
+    <div class="container mt-4">
+      <!-- Card Container -->
+      <div class="card shadow-sm border-light rounded-3">
+        <div class="d-flex align-items-center p-1" data-bs-toggle="collapse" data-bs-target="#postDetails">
+          <!-- First div: User Image -->
+          <div class="">
+            <img src="img/news.webp" class="" alt="User Image" style="width: 100px; height: 100px; object-fit: cover;">
+          </div>
+          
+          <!-- Second div: User Info (Text) -->
+          <div class="p-2 flex-grow-1">
+            <h5 class="card-title mb-1">
+              <a href="#" class="text-dark text-decoration-none font-weight-bold">আজ সকালে ট্রাকের ধাক্কায় ঢাকা নারায়াণগঞ্জ লিংক রোড় এ নিহত ২ জন।</a>
+            </h5>
+            <div class="d-flex">
+              <small class="card-text me-3 text-muted"><i class="fas fa-list"></i> Accident</small>
+              <small class="card-text text-muted"><i class="fas fa-clock"></i> 3 hr ago</small>
+            </div>
+          </div>
+          
+          <!-- Third div: Like Button -->
+          <div class="p-2">
+            <button class="bntStyle" id="likeBtn" onclick="toggleLike('likeBtn', 'likeIcon', 'likeCount')">
+              <i class="fas fa-thumbs-up" id="likeIcon"></i>
+              <span id="likeCount">0</span>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Collapsible Section -->
+        <div id="postDetails" class="collapse">
+          <div class="card-body">
+            <h5>Details:</h5>
+            <p>This is more detailed information about the incident. It provides more context on what happened during the accident, the persons involved, and the consequences of the event.</p>
+            <p>Details could include eyewitness reports, ongoing investigations, or emergency response updates.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Product Section -->
+  <section>
+    <div class="container mt-4 mb-4">
+      <div class="card shadow-sm border-light rounded-3">
+        <div class="d-flex align-items-center p-1" data-bs-toggle="collapse" data-bs-target="#productDetails">
+          <!-- First div: User Image -->
+          <div class="">
+            <img src="img/mobile.jpg" class="" alt="User Image" style="width: 100px; height: 100px; object-fit: cover;">
+          </div>
+          
+          <!-- Second div: User Info (Text) -->
+          <div class="p-2 flex-grow-1">
+            <h5 class="card-title mb-1">
+              <a href="#" class="text-dark text-decoration-none font-weight-bold">Realme 5i 8/64 GB</a>
+            </h5>
+            <div class="d-flex">
+              <small class="card-text me-3 text-muted"><i class="fas fa-list"></i> Mobile</small>
+              <small class="card-text text-muted"><i class="fas fa-tag"></i> 10,000</small>
+            </div>
+          </div>
+          
+          <!-- Third div: Cart Button -->
+          <div class="p-2">
+            <button class="bntStyle" onclick="incrementCart(this)" id="cartBtn" data-bs-toggle="modal" data-bs-target="#cartModal">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="count">0</span>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Collapsible Section -->
+        <div id="productDetails" class="collapse">
+          <div class="card-body">
+            <h5>Product Details:</h5>
+            <p>This is more information about the product, including specifications, features, and reviews.</p>
+            <p>Details could include warranty information, product usage tips, and customer feedback.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Modal Structure for Cart -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartModalLabel">Confirm Order</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <input type="text" class="form-control" id="productName" value="Realme 5i 8/64 GB" readonly>
+              </div>
+              <div class="mb-3">
+                <input type="number" class="form-control" id="quantity" placeholder="Quantity">
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control" id="customerName" placeholder="Your Name">
+              </div>
+              <div class="mb-3">
+                <input type="tel" class="form-control" id="phone" placeholder="Phone Number">
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" id="address" rows="3" placeholder="Your Address"></textarea>
+              </div>
+              <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-success">Confirm Order</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <footer class="mt-4 mb-4 text-center">
+    <div class="container>
+        <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+                <a href="#" class="text-decoration-none">About</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#" class="text-decoration-none">Terms</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#" class="text-decoration-none">Privacy</a>
+            </li>
+            <li class="list-inline-item dropdown">
+                <a href="#" class="text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="admin">Admin Login</a></li>
+                </ul>
+            </li>
+        </ul>
+        <br>
+        <small class="text-muted">NIOM &copy; 2024</small>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- location Modal -->
+    <div class="modal fade" id="countryModal" tabindex="-1" aria-labelledby="countryModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="countryModalLabel">Select Location</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form>
+                      <div class="mb-3">
+                          <select class="form-select" id="country" onchange="loadCities()">
+                              <option value="US">All Country</option>
+                              <option value="US">USA</option>
+                              <option value="BD">Bangladesh</option>
+                          </select>
+                      </div>
+                      <div class="mb-3">
+                          <select class="form-select" id="city" onchange="loadAreas()" disabled>
+                              <option value="" disabled selected>Select City</option>
+                          </select>
+                      </div>
+                      <div class="mb-3">
+                          <select class="form-select" id="area" disabled>
+                              <option value="" disabled selected>Select Area</option>
+                          </select>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                          <button type="button" class="btn btn-primary">Go</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+  <!-- login signup modal -->
+  <div class="modal fade" id="loginSignupModalUnique" tabindex="-1" aria-labelledby="loginSignupModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginSignupModalLabel">Account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="authFormUnique">
+                    <!-- Country Code Selection and Phone Number Input -->
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <select class="form-select" id="countryCodeUnique">
+                                <option value="+1">Select country code</option>
+                                <option value="+93">+93 (Afghanistan)</option>
+                            </select>
+                            <input type="text" class="form-control" id="phoneUnique" placeholder="phone number">
+                        </div>
+                    </div>
+
+                    <!-- Image Upload Field -->
+                    <div class="mb-3" id="imageFieldUnique" style="display: none;">
+                        <input type="file" class="form-control" id="imageUploadUnique">
+                    </div>
+
+                    <!-- Name Input Field -->
+                    <div class="mb-3" id="nameFieldUnique" style="display: none;">
+                        <input type="text" class="form-control" id="nameUnique" placeholder="your name">
+                    </div>
+
+                    <!-- Password Input Field -->
+                    <div class="mb-3" id="passwordFieldUnique" style="display: none;">
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="passwordUnique" placeholder="password">
+                            <button type="button" class="btn btn-outline-secondary" id="togglePasswordUnique">Show</button>
+                        </div>
+                    </div>
+                    <!-- otp Input Field -->
+                    <div class="mb-3" id="otpFieldUnique" style="display: none;">
+                        <div class="input-group">
+                            <input type="otp" class="form-control" id="otpUnique" placeholder="otp">
+                        </div>
+                    </div>
+
+                    <!-- Forget Password Link -->
+                    <div class="mb-3 text-center" id="forgetPasswordLink" style="display: none;">
+                        <a href="#" class="text-decoration-none">Forget Password?</a>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="d-flex justify-content-center">
+                        <button type="button" id="nextButtonUnique" class="btn btn-primary">Next</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- Create Post Modal -->
+<div class="modal fade" id="createPostModal" tabindex="-1" aria-labelledby="createPostModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="createPostModalLabel">Create Post</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="mb-3">
+          <select class="form-select" id="selectProfile">
+            <option value="technology">Select Profile</option>
+            <option value="technology">Moinul Islam</option>
+            <option value="business">NIOM IT</option>
+            <option value="lifestyle">Kutubpurbashi</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <input type="file" class="form-control" id="profileImage" accept="image/*">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="postTitle" placeholder="Post Title">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="postCatagory" placeholder="Post Catagory">
+        </div>
+        <div class="mb-3">
+          <textarea class="form-control" id="postDetails" rows="3" placeholder="Post Details"></textarea>
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-primary">Post</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Add Product/Service Modal -->
+<div class="modal fade" id="addProductServiceModal" tabindex="-1" aria-labelledby="addProductServiceModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="addProductServiceModalLabel">Add Product/Service</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="mb-3">
+          <select class="form-select" id="selectProfile">
+            <option value="technology">Select Profile</option>
+            <option value="technology">Moinul Islam</option>
+            <option value="business">NIOM IT</option>
+            <option value="lifestyle">Kutubpurbashi</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <input type="file" class="form-control" id="profileImage" accept="image/*">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="postTitle" placeholder="Product/Service Title">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="postTopic" placeholder="Product/Service Catagory">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="postTitle" placeholder="Product/Service Price">
+        </div>
+        <div class="mb-3">
+          <textarea class="form-control" id="postDetails" rows="3" placeholder="Product/Service Details"></textarea>
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-primary">Add Product/Service</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<!-- Create Profile Modal -->
+<div class="modal fade" id="createProfileModal" tabindex="-1" aria-labelledby="createProfileModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createProfileModalLabel">Create Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <input type="file" class="form-control" id="profileImage" accept="image/*">
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" id="profileName" placeholder="Name">
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" id="profileUsername" placeholder="Username">
+          </div>
+          <div class="mb-3">
+            <div class="input-group">
+            <select class="form-select" id="countryCode">
+                <option value="+1">Select country code</option>
+                <option value="+93">+88 (Bangladesh)</option>                              
+            </select>          
+            <input type="text" class="form-control" id="phone" placeholder="phone number">
+          </div>
+          <div class="mt-3 mb-3">
+            <select class="form-select" id="category">
+              <option value="technology">Select Catagory</option>
+              <option value="technology">Technology</option>
+              <option value="business">Business</option>
+              <option value="lifestyle">Lifestyle</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <select class="form-select" id="subCategory">
+              <option value="technology">Select Subcatagory</option>
+              <option value="sub1">Sub Category 1</option>
+              <option value="sub2">Sub Category 2</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" id="topic" placeholder="Topic">
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" id="city" placeholder="City">
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" id="area" placeholder="Area">
+          </div>
+          <div class="mb-3">
+            <div class="input-group">                    
+            <input type="text" class="form-control" id="holdingNo" placeholder="Holding No">
+            <input type="text" class="form-control" id="roadName" placeholder="Road Name">
+          </div>
+          <div class="mb-3 mt-3">
+            <textarea class="form-control" id="profileDetails" rows="3" placeholder="Details"></textarea>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-primary">Create Profile</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+<script src="script.js"></script>
+
+
+
+
+</body>
+
+</html>
